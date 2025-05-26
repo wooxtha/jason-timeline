@@ -18,39 +18,36 @@
     }
 
     .timeline {
-      position: relative;
-      margin: 0 auto;
-      padding-left: 40px;
-      border-left: 4px solid #333;
       max-width: 700px;
+      margin: 0 auto;
+      padding-left: 20px;
+      border-left: 4px solid #333;
     }
 
     .event {
-      margin-bottom: 30px;
       position: relative;
+      margin-bottom: 30px;
+      padding-left: 80px;
     }
 
-    .event::before {
-      content: "";
+    .event .time-box {
       position: absolute;
-      left: -12px;
-      top: 5px;
-      width: 16px;
-      height: 16px;
+      left: -4.5rem;
+      top: 0;
       background-color: #333;
-      border-radius: 50%;
+      color: #fff;
+      padding: 6px 10px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 4px;
+      width: 70px;
+      text-align: center;
     }
 
     .event h3 {
-      margin: 0;
+      margin: 0 0 5px;
       font-size: 18px;
       color: #333;
-    }
-
-    .time {
-      font-size: 14px;
-      color: #777;
-      margin: 4px 0;
     }
 
     .category {
@@ -59,9 +56,8 @@
       color: #fff;
       background-color: #555;
       display: inline-block;
-      padding: 2px 8px;
+      padding: 3px 8px;
       border-radius: 4px;
-      margin-top: 5px;
     }
 
     .category.suspicious {
@@ -79,7 +75,6 @@
     .category.solo {
       background-color: #f39c12;
     }
-
   </style>
 </head>
 <body>
@@ -87,34 +82,34 @@
   <h1>Jason's Timeline</h1>
 
   <div class="timeline">
-    
+
     <div class="event">
+      <div class="time-box">5:30–7:30</div>
       <h3>Jason plays League of Legends at home</h3>
-      <div class="time">Thursday — 5:30 p.m. to 7:30 p.m.</div>
       <div class="category self">Self-reported</div>
     </div>
 
     <div class="event">
+      <div class="time-box">8:30–8:45*</div>
       <h3>Jason returns alone to the office to pick up a document</h3>
-      <div class="time">Thursday — 8:30 p.m. to 8:45 p.m. <em>(assumed)</em></div>
       <div class="category solo">Self-reported / Solo access</div>
     </div>
 
     <div class="event">
+      <div class="time-box">8:45–9:15</div>
       <h3>Window of opportunity to tamper with Christina’s drink or food</h3>
-      <div class="time">Thursday — 8:45 p.m. to 9:15 p.m.</div>
       <div class="category suspicious">Suspicious window</div>
     </div>
 
     <div class="event">
+      <div class="time-box">9:15–12:30</div>
       <h3>Jason resumes playing League of Legends at home</h3>
-      <div class="time">Thursday — 9:15 p.m. to 12:30 a.m.</div>
       <div class="category self">Self-reported</div>
     </div>
 
     <div class="event">
+      <div class="time-box">10:00–11:00</div>
       <h3>Christina’s estimated time of death</h3>
-      <div class="time">Thursday — 10:00 p.m. to 11:00 p.m.</div>
       <div class="category known">Known (coroner’s conclusion)</div>
     </div>
 
@@ -122,4 +117,5 @@
 
 </body>
 </html>
+
 
