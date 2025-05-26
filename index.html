@@ -7,9 +7,9 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f8f8f8;
       margin: 0;
-      padding: 30px;
+      padding: 40px 20px;
     }
 
     h1 {
@@ -20,61 +20,60 @@
     .timeline {
       max-width: 700px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: relative;
       padding-left: 20px;
-      border-left: 4px solid #333;
+      border-left: 4px solid #444;
     }
 
     .event {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
       position: relative;
-      margin-bottom: 30px;
-      padding-left: 80px;
     }
 
-    .event .time-box {
-      position: absolute;
-      left: -4.5rem;
-      top: 0;
-      background-color: #333;
+    .time-box {
+      background-color: #444;
       color: #fff;
-      padding: 6px 10px;
-      font-size: 13px;
+      padding: 8px 12px;
       font-weight: bold;
       border-radius: 4px;
-      width: 70px;
+      min-width: 90px;
       text-align: center;
+      flex-shrink: 0;
     }
 
-    .event h3 {
-      margin: 0 0 5px;
-      font-size: 18px;
+    .event-content {
+      background-color: #fff;
+      padding: 12px 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1;
+    }
+
+    .event-content h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
       color: #333;
     }
 
     .category {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
       color: #fff;
-      background-color: #555;
       display: inline-block;
-      padding: 3px 8px;
+      padding: 4px 8px;
       border-radius: 4px;
+      margin-top: 5px;
     }
 
-    .category.suspicious {
-      background-color: #c0392b;
-    }
-
-    .category.known {
-      background-color: #2980b9;
-    }
-
-    .category.self {
-      background-color: #27ae60;
-    }
-
-    .category.solo {
-      background-color: #f39c12;
-    }
+    .self { background-color: #2ecc71; }
+    .solo { background-color: #f39c12; }
+    .suspicious { background-color: #e74c3c; }
+    .known { background-color: #2980b9; }
   </style>
 </head>
 <body>
@@ -84,33 +83,43 @@
   <div class="timeline">
 
     <div class="event">
-      <div class="time-box">5:30–7:30</div>
-      <h3>Jason plays League of Legends at home</h3>
-      <div class="category self">Self-reported</div>
+      <div class="time-box">5:30–7:30 PM</div>
+      <div class="event-content">
+        <h3>Jason plays League of Legends at home</h3>
+        <span class="category self">Self-reported</span>
+      </div>
     </div>
 
     <div class="event">
-      <div class="time-box">8:30–8:45*</div>
-      <h3>Jason returns alone to the office to pick up a document</h3>
-      <div class="category solo">Self-reported / Solo access</div>
+      <div class="time-box">8:30–8:45 PM*</div>
+      <div class="event-content">
+        <h3>Jason returns alone to the office to pick up a document</h3>
+        <span class="category solo">Self-reported / Solo access</span>
+      </div>
     </div>
 
     <div class="event">
-      <div class="time-box">8:45–9:15</div>
-      <h3>Window of opportunity to tamper with Christina’s drink or food</h3>
-      <div class="category suspicious">Suspicious window</div>
+      <div class="time-box">8:45–9:15 PM</div>
+      <div class="event-content">
+        <h3>Opportunity to slip sleeping pills into Christina’s drink or food</h3>
+        <span class="category suspicious">Suspicious window</span>
+      </div>
     </div>
 
     <div class="event">
-      <div class="time-box">9:15–12:30</div>
-      <h3>Jason resumes playing League of Legends at home</h3>
-      <div class="category self">Self-reported</div>
+      <div class="time-box">9:15–12:30 AM</div>
+      <div class="event-content">
+        <h3>Jason resumes playing League of Legends at home</h3>
+        <span class="category self">Self-reported</span>
+      </div>
     </div>
 
     <div class="event">
-      <div class="time-box">10:00–11:00</div>
-      <h3>Christina’s estimated time of death</h3>
-      <div class="category known">Known (coroner’s conclusion)</div>
+      <div class="time-box">10:00–11:00 PM</div>
+      <div class="event-content">
+        <h3>Christina’s estimated time of death</h3>
+        <span class="category known">Known (coroner’s conclusion)</span>
+      </div>
     </div>
 
   </div>
