@@ -1,72 +1,110 @@
-import React from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jason's Timeline</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #f5f5f5;
+      color: #333;
+    }
 
-const timelineData = [
-  {
-    day: "Thursday",
-    start: "5:30 p.m.",
-    end: "7:30 p.m.",
-    event: "Jason plays League of Legends at home",
-    category: "Self-reported"
-  },
-  {
-    day: "Thursday",
-    start: "8:30 p.m.",
-    end: "8:45 p.m. *assumed*",
-    event: "Jason returns alone to the office to pick up a document. Christina is inside but does not see him.",
-    category: "Self-reported / Solo access"
-  },
-  {
-    day: "Thursday",
-    start: "8:45 p.m.",
-    end: "9:15 p.m.",
-    event: "Window of opportunity for Jason to slip sleeping pills into Christina’s drink or food",
-    category: "Suspicious window"
-  },
-  {
-    day: "Thursday",
-    start: "9:15 p.m.",
-    end: "12:30 a.m.",
-    event: "Jason resumes playing League of Legends at home",
-    category: "Self-reported"
-  },
-  {
-    day: "Thursday",
-    start: "10:00 p.m.",
-    end: "11:00 p.m.",
-    event: "Christina’s time of death (coroner’s estimate), consistent with overdose timing",
-    category: "Known (coroner’s conclusion)"
-  }
-];
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
 
-export default function JasonTimeline() {
-  return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Jason's Timeline</h1>
-      <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-300">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="border px-4 py-2 text-left">Day</th>
-              <th className="border px-4 py-2 text-left">Start Time</th>
-              <th className="border px-4 py-2 text-left">End Time</th>
-              <th className="border px-4 py-2 text-left">Event</th>
-              <th className="border px-4 py-2 text-left">Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            {timelineData.map((item, index) => (
-              <tr key={index} className="odd:bg-white even:bg-gray-50">
-                <td className="border px-4 py-2">{item.day}</td>
-                <td className="border px-4 py-2">{item.start}</td>
-                <td className="border px-4 py-2">{item.end}</td>
-                <td className="border px-4 py-2">{item.event}</td>
-                <td className="border px-4 py-2">{item.category}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    th, td {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #222;
+      color: white;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .suspicious {
+      background-color: #ffe4e1;
+    }
+
+    .category {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jason's Timeline</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Event</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Thursday</td>
+        <td>5:30 p.m.</td>
+        <td>7:30 p.m.</td>
+        <td>Jason plays League of Legends at home</td>
+        <td class="category">Self-reported</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>8:30 p.m.</td>
+        <td>8:45 p.m. <em>(assumed)</em></td>
+        <td>Jason returns alone to the office to pick up a document. Christina is inside but does not see him.</td>
+        <td class="category">Self-reported / Solo access</td>
+      </tr>
+      <tr class="suspicious">
+        <td>Thursday</td>
+        <td>8:45 p.m.</td>
+        <td>9:15 p.m.</td>
+        <td>Window of opportunity for Jason to slip sleeping pills into Christina’s drink or food</td>
+        <td class="category">Suspicious window</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>9:15 p.m.</td>
+        <td>12:30 a.m.</td>
+        <td>Jason resumes playing League of Legends at home</td>
+        <td class="category">Self-reported</td>
+      </tr>
+      <tr>
+        <td>Thursday</td>
+        <td>10:00 p.m.</td>
+        <td>11:00 p.m.</td>
+        <td>Christina’s time of death (coroner’s estimate), consistent with overdose timing</td>
+        <td class="category">Known (coroner’s conclusion)</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
 
